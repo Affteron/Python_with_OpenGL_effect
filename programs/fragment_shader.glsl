@@ -4,6 +4,10 @@
 
 out vec4 fragColor; 
 
+uniform vec2 resolution;
+uniform float time;
+
+
 void main() {
     vec3 col = vec3(0.0);
 

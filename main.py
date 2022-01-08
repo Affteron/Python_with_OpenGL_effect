@@ -14,10 +14,19 @@ class App(mglw.WindowConfig):
         # Load shader program (vertex and fragmend shader)
         self.prog = self.load_program(vertex_shader="vertex_shader.glsl",
                                        fragment_shader="fragment_shader.glsl")
+        self.set_uniform("resolution", self.window_size)
+
+    def set_uniform(self, u_name, u_value):
+        try:
+            self.prog[u_name] = u_value
+        except KeyError:
+            print(f"Uniform: {u_name} - not used in shader")
 
     def render(self, time, frame_time):
         # Clear frame buffer
         self.ctx.clear()
+        # Transfer a time value in fragment shader
+        self.set_uniform("time", time)
         # Render new frame
         self.quad.render(self.prog)
 
