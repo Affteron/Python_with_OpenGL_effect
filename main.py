@@ -10,7 +10,7 @@ class App(mglw.WindowConfig):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # Create quad screen (plane with four vertexes)
-        self.quad = mglw.geomentry.quad_fs()
+        self.quad = mglw.geometry.quad_fs()
         # Load shader program (vertex and fragmend shader)
         self.prog = self.load_program(vertex_shader="vertex_shader.glsl",
                                        fragment_shader="fragment_shader.glsl")
