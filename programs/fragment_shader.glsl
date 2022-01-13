@@ -18,7 +18,7 @@ void main() {
     vec2 uv = (gl_FragCoord.xy - 0.5 * resolution.xy) / resolution.y;
     vec3 col = vec3(0.0);
 
-    uv = rotate2D(uv, time);
+    uv = rotate2D(uv, 3.14 / 2.0);
 
     // Const for calculate normilize x coordinate 
     float r = 0.17;
@@ -31,7 +31,7 @@ void main() {
         col += 0.001 / length(uv - vec2(dx + 0.1, dy));
     }
 
-    col += vec3(0.2, 0.1, 0.3);
+    col += vec3(0.95, 0.6, 0.37);
 
 
     fragColor = vec4(col, 1.0);
