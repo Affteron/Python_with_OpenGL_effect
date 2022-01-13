@@ -31,7 +31,7 @@ void main() {
         col += 0.001 / length(uv - vec2(dx + 0.1, dy));
     }
 
-    col += vec3(0.95, 0.6, 0.37);
+    col *= vec3(0.95, 0.6, 0.37);
 
 
     fragColor = vec4(col, 1.0);
