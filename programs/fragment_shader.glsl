@@ -28,10 +28,10 @@ void main() {
         float dx = 2 * r * cos(a) - r * cos(2 * a);
         float dy = 2 * r * sin(a) - r * sin(2 * a);
 
-        col += 0.001 / length(uv - vec2(dx + 0.1, dy));
+        col += 0.003 / length(uv - vec2(dx + 0.1, dy));
     }
 
-    col *= vec3(0.95, 0.6, 0.37);
+    col *= sin(vec3(0.95, 0.6, 0.37) * time) * 0.15 + 0.25;
 
 
     fragColor = vec4(col, 1.0);
