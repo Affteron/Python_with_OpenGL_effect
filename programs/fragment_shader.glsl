@@ -24,11 +24,14 @@ void main() {
     float r = 0.17;
 
     for (float i = 0.0; i < 60.0; i++){
+        float factor = sin(time) * 0.5 + 0.8;
+        i += factor;
+
         float a = i / 3;
         float dx = 2 * r * cos(a) - r * cos(2 * a);
         float dy = 2 * r * sin(a) - r * sin(2 * a);
 
-        col += 0.003 / length(uv - vec2(dx + 0.1, dy));
+        col += 0.007 * factor / length(uv - vec2(dx + 0.1, dy));
     }
 
     col *= sin(vec3(0.95, 0.6, 0.37) * time) * 0.15 + 0.25;
